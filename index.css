@@ -1,0 +1,218 @@
+
+/* space from the right */
+/* body {
+    margin: 0px;
+    background: brown;
+} */
+/* name of the game  */
+/* h1 {
+    font-size: 72px;
+    font-family: sans-serif;
+
+} */
+/* parent is the board & grid it self divs are the child inside it  */
+/* .board{
+    position: center;
+    display:grid;
+    /* space between the divs */
+    /* grid-gap: 5px; */
+    /* width and height of the colums and rows  */
+    /* grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px; */
+/* } */
+    /* inside the divs */
+/* .board > div {
+    padding: 10px;
+    background-color: burlywood;
+    /* makes the ends circular */
+    /* border-radius: 25px; */
+    /* inside divs or squares */
+    /* display: grid;
+    place-items: center;
+    font-family: sans-serif;
+    font-weight:bold ;
+    font-size: 75px; */
+/* } */
+/* options menu */
+/* .choose-player {
+    position: absolute ;
+    left:15% ;
+    bottom: 10%;
+    background: white;
+    transform: translate(-50%, -50%) ; 
+    padding: 15px;
+}  */
+
+/* .choose-player .title {
+    font-weight: bolder;
+    font-size: 1.5em;
+   
+}
+.board .player {
+    position: absolute ;
+    left:15% ;
+    bottom: 10%;
+    background: white;
+    transform: translate(-50%, -50%) ; 
+    padding: 15px;
+} */
+
+*, *::after, *::before {
+    box-sizing:border-box;
+}
+/* makes alll the cells the same size  */
+:root {
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size)* .9);
+
+}
+body {
+    margin:0;
+}
+/* the 3x3 */
+.gameboard { 
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3,auto)
+}
+/* gives the square its shape and put things in the middle of it also allows cursor to be a pointer  */
+.square {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: white;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+/* background color moved it up 
+ light color wasnt showing up
+when it was below it 
+circle and x option before and after selection  */
+.square.circle::before,
+.square.circle::after,
+.square.x::before,
+.square.x::after {
+    background-color: red;
+}
+
+/* take gameboard piece in the square and hover it over the square 
+not function makes it not show up when something is there already // 
+this is before the option is selected /// && make the possible option a light yellow */
+.gameboard.x .square:not(.x):not(.circle):hover::before,
+.gameboard.x .square:not(.x):not(.circle):hover::after, 
+.gameboard.circle .square:not(.x):not(.circle):hover::before,
+.gameboard.circle .square:not(.x):not(.circle):hover::after  {
+ background-color: lightgoldenrodyellow;
+}
+
+/* //cursor not allowed in square when one has been used */
+.square.x, 
+.square.circle {
+    cursor: not-allowed;
+}
+
+/* ///////////////////OOOOOOOOOOOOoooooooooOOOOOO\\\\\\\\\\\\ */
+
+/* //make the letter O */
+.square.circle::before,
+.gameboard.circle .square:not(.x):not(.circle):hover::before {
+    width: var(--mark-size);
+    height: var(--mark-size);
+    
+}
+/* make circle change color after selecting option */
+.square.circle::after,
+.gameboard.circle .square:not(.x):not(.circle):hover::after  {
+    width: calc(var(--mark-size)*.6);
+    height: calc(var(--mark-size)*.6);
+    background-color: white;
+    
+}
+
+/* makes the circle round and in the middle */
+.square.circle::before,
+.square.circle::after,
+.gameboard.circle .square:not(.x):not(.circle):hover::before,
+.gameboard.circle .square:not(.x):not(.circle):hover::after {
+    content:'';
+    position: absolute;
+    /* width: var(--mark-size);
+    height: var(--mark-size);
+    background-color: black; */
+    border-radius: 50%;
+} 
+
+/* /////////////////XxxxXXXXXXXXXxxxxxxXXXXXXXxxxx\\\\\\\\\\\\\\\\\\\ */
+/* //make the letter x turns the two lines to make an x */
+.square.x::before,
+.gameboard.x .square:not(.x):not(.circle):hover::before {
+    transform: rotate(45deg);
+}
+
+.square.x::after,
+.gameboard.x .square:not(.x):not(.circle):hover::after {
+    transform: rotate(-45deg);
+}
+
+/* affects the x option before and after selection, what color
+ it will be and to hover the x option over the square   */
+.square.x::before,
+.square.x::after,
+.gameboard.x .square:not(.x):not(.circle):hover::before,
+.gameboard.x .square:not(.x):not(.circle):hover::after {
+    content:'';
+    position: absolute;
+    width: calc(var(--mark-size) * .15);
+    height:var(--mark-size);
+    
+} 
+
+.winning-message {
+    display: none;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0,0,0,.9);
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    color: white;
+    font-size: 6rem;
+}
+
+
+
+.winning-message button {
+    font-size: 4rem;
+    border:1px solid red;
+    padding: .25em .5em;
+    cursor: pointer;
+    background-color: whitesmoke;
+}
+
+.winning-message button:hover {
+    background-color: grey;
+    color: white;
+    
+}
+
+.winning-message.show {
+    display: flex;
+}
+
+
+
+/* // wraps the cells */
+
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link href="./index.css" rel="stylesheet" />
+    <script src="./index.js" defer></script>
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+<!-- board is the parent -->
+<!-- put squares in one class so we cann make them 
+clickable and switch between options together
+may have to put eachin seperate id classes,
+still gotta figure how to choose option and put
+it in the box and not make it reselectable after a win (js)-->
+    <!-- <div class="board"> -->
+        <!-- <div class="details">
+            <div class ="players">
+                <span class="Xturn">X's Turn</span>
+                <span class="Oturn">O's Turn</span>
+            </div> -->
+        <!-- </div>
+            <div class="square-info"></div>
+            <div class="square2"></div>
+            <div class="square3"></div>  
+            <div class="square4"></div>
+            <div class="square5"></div>
+            <div class="square6"></div>
+            <div class="'square7"></div>
+            <div class="square8"></div>
+            <div class="square9"></div>
+    </div> -->
+    <!-- <div class="choose-player">
+        <div class="content">
+            <div class="title">  Choose A Player  </div>
+                <div class="playeroptions"> 
+                    <button class="playerX">Player (X)</button> 
+                    <button class="playerO">Player (O)</button>
+                </div>
+        </div>
+    </div> -->
+         <!-- the gameboard the 9 squares each are a div we will customize the divs -->
+    <!-- <div class="gameboard" id="gameboard">
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+    </div> -->
+    <!-- X options in every space -->
+    <!-- <div class="gameboard x" id="gameboard">
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+    </div> -->
+    <!-- O options in every space -->
+    <div class="gameboard" id="gameboard">
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+        <div class="square" square-info></div>
+    </div>
+    <div class ="winning-message" id="winningMessage">
+        <!-- add show to show mssg -->
+        <div data-winning-message-text></div>
+        <button id="restartButton">Play Again</button>
+    </div>
+    <!-- <div class ="winning-message  circle" id="winning message">
+        <div data-winning-message-text>Player X Wins</div>
+        <button id="restartButton">Play Again</button>
+    </div>
+    <div class ="winning-message draw" id="winning message">
+        <div data-winning-message-text>Tie Game</div>
+        <button id="restartButton">Play Again</button>
+
+    </div> -->
+
+</body>
+</html>
+<!-- reset button 
+<input type ="reset"
+value="Reset"> --> 
+
