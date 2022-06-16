@@ -57,6 +57,8 @@
     padding: 15px;
 } */
 
+
+
 *, *::after, *::before {
     box-sizing:border-box;
 }
@@ -93,6 +95,7 @@ body {
     cursor: pointer;
 }
 
+
 /* background color moved it up 
  light color wasnt showing up
 when it was below it 
@@ -122,7 +125,7 @@ this is before the option is selected /// && make the possible option a light ye
 
 /* ///////////////////OOOOOOOOOOOOoooooooooOOOOOO\\\\\\\\\\\\ */
 
-/* //make the letter O */
+/* //make the letter O  the hover is psuedo code */
 .square.circle::before,
 .gameboard.circle .square:not(.x):not(.circle):hover::before {
     width: var(--mark-size);
